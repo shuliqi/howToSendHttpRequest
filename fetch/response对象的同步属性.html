@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>response对象的同步属性</title>
+</head>
+<body>
+   <script>
+    async function getData () {
+      try {
+        const response = await fetch("https://www.fastmock.site/mock/d867c364f89208a7672e9e9d0a822417/qixiao/getFileDetail");
+        console.log("数据请求成功：", response.status, response.statusText)
+      } catch (error) {
+        console.log("获取数据失败：", err)
+      }
+    }
+    getData();
+   </script>
+</body>
+</html>
