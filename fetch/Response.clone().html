@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Response.clone()</title>
+</head>
+<body>
+   <script>
+    async function getData () {
+      try {
+        const response1 = await fetch("https://www.fastmock.site/mock/d867c364f89208a7672e9e9d0a822417/qixiao/getFileDetail");
+        const response2 = response1.clone();
+        const result1 = await response1.json();
+        const result2 = await response2.text();
+        console.log("result1--------:", result1); 
+        console.log("result2--------:", result2); 
+      } catch (error) {
+        console.log("获取数据失败：", err)
+      }
+    }
+    getData();
+   </script>
+</body>
+</html>

@@ -2,14 +2,18 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>async,await 方式</title>
+  <title>response.headers</title>
 </head>
 <body>
    <script>
     async function getData () {
       try {
         const response = await fetch("https://www.fastmock.site/mock/d867c364f89208a7672e9e9d0a822417/qixiao/getFileDetail");
-        console.log("数据请求成功：", response.json())
+        const headers = response.headers; 
+        for (let [key, value] of response.headers) { 
+            console.log(`${key} : ${value}`);  
+        }
+        console.log(headers.get("Content-Type")) // application/json; charset=utf-8
       } catch (error) {
         console.log("获取数据失败：", err)
       }
